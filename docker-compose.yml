@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: url-deduplicate
+    ports:
+      - "5000:5000"  # 映射容器端口到本地
+    volumes:
+      - ./app/uploads:/app/uploads  # 挂载上传目录
+    environment:
+      - FLASK_ENV=production
